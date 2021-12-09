@@ -4,6 +4,6 @@
   "recommendations": [
     "redhat/vscode-xml",
     "redhat/vscode-apache-camel",
-    "redhat/java"
+    "redhat/java8"
   ]
 }
