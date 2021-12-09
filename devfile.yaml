@@ -8,7 +8,7 @@ components:
       memoryLimit: 3Gi
       env:
         - name: JAVA_HOME
-          value: $JAVA_HOME_8
+          value: /home/user/.sdkman/candidates/java/8.0.302-open
       endpoints:
         - exposure: none
           name: debug
