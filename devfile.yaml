@@ -6,9 +6,6 @@ components:
     container:
       image: quay.io/devfile/universal-developer-image:ubi8-d3eab13
       memoryLimit: 3Gi
-      env:
-        - name: JAVA_HOME
-          value: /home/user/.sdkman/candidates/java/8.0.302-open
       endpoints:
         - exposure: none
           name: debug
@@ -27,16 +24,16 @@ components:
 commands:
 - id: build-the-project
   exec:
-    commandLine: mvn clean install
+    commandLine: JAVA_HOME=$JAVA_HOME_8 mvn clean install
     component: tools
     workingDir: "${PROJECTS_ROOT}/fuse-rest-http-booster"
 - id: run-the-services
   exec:
-    commandLine: mvn spring-boot:run -DskipTests
+    commandLine: JAVA_HOME=$JAVA_HOME_8 mvn spring-boot:run -DskipTests
     component: tools
     workingDir: "${PROJECTS_ROOT}/fuse-rest-http-booster"
 - id: run-the-services-debug
   exec:
-    commandLine: mvn spring-boot:run -DskipTests -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
+    commandLine: JAVA_HOME=$JAVA_HOME_8 mvn spring-boot:run -DskipTests -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
     component: tools
     workingDir: "${PROJECTS_ROOT}/fuse-rest-http-booster"
