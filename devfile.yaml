@@ -32,7 +32,7 @@ commands:
     commandLine: mvn spring-boot:run -DskipTests
     component: maven
     workingDir: "${PROJECTS_ROOT}/fuse-rest-http-booster"
-- id: run-the-services_debugging-enabled
+- id: run-the-services-debug
   exec:
     commandLine: mvn spring-boot:run -DskipTests -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
     component: maven
