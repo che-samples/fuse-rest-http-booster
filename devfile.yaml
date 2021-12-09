@@ -22,12 +22,12 @@ components:
     volume:
       size: 1G
 commands:
-- id: build the project
+- id: build-the-project
   exec:
     commandLine: mvn clean install
     component: maven
     workingDir: "${PROJECTS_ROOT}/fuse-rest-http-booster"
-- id: run the services
+- id: run-the-services
   exec:
     commandLine: mvn spring-boot:run -DskipTests
     component: maven
